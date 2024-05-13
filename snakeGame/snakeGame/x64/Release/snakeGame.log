@@ -1,6 +1,4 @@
-﻿  소스.cpp
-  코드를 생성하고 있습니다.
-  Previous IPDB not found, fall back to full compilation.
-  All 10 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  코드를 생성했습니다.
-  snakeGame.vcxproj -> C:\Users\yunji\snakeGame\SnakeGame\snakeGame\x64\Release\snakeGame.exe
+﻿  func.cpp
+  main.cpp
+SDL2main.lib(SDL_windows_main.obj) : error LNK2001: 확인할 수 없는 외부 기호 SDL_main
+C:\Users\yunji\snakeGame\SnakeGame\snakeGame\x64\Release\snakeGame.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.
