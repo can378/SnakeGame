@@ -1,5 +1,5 @@
 #include "func.h"
-/*
+
 #include "SDL_image.h"
 #include <windows.h>
 #include <string>
@@ -135,6 +135,7 @@ std::vector<Bullet> bullets(5, Bullet(0, 0, false));
 /////////////////////////////////////////////////////////////
 void InitGame() 
 {
+	/*
 	g_input_shoot = 0;
 	g_input_stack.push_back(0);
 
@@ -237,7 +238,7 @@ void InitGame()
 
 
 
-
+	*/
 
 	//Organize///////////////////////////////////////////////////////////////
 	// std::cout 출력에 버퍼를 사용하여, 출력 속도가 느려지는 현상을 피한다.
@@ -253,35 +254,6 @@ void InitGame()
 void Update() 
 {
 	//std::cout << g_input_shoot << "\n";
-
-	//space (shot)
-	if (g_input_shoot == 1)
-	{
-		//Bullet
-		for (int i = 0; i < bullets.size(); i++)
-		{
-			if (bullets[i].isFlying != true)
-			{
-				score += 10;
-				UpdateScore(score);
-				bullets[i].g_bullet_pos.x = g_airplane_pos.x + g_airplane_pos.w / 2 - bullets[i].g_bullet_pos.w / 2;
-				bullets[i].g_bullet_pos.y = g_airplane_pos.y - bullets[i].g_bullet_pos.h/2;
-				bullets[i].isFlying = true;
-				break;
-			}
-		}
-
-		//SFX Sound Play
-		Mix_PlayChannel(-1, wave1_, 0);
-
-
-		g_input_shoot = 2;
-	}
-	else if (g_input_shoot == 2) { g_input_shoot = 3; }
-	else if (g_input_shoot == 3) { g_input_shoot = 4; }
-	else if (g_input_shoot == 4) { g_input_shoot = 5; }
-	else if (g_input_shoot == 5) { g_input_shoot = 1; }
-
 
 	nowInput = g_input_stack[g_input_stack.size() - 1];
 
@@ -339,7 +311,7 @@ void Render()
 {
 
 	SDL_RenderClear(g_renderer);
-	
+	/*
 	// Background drawing
 	SDL_RenderCopy(g_renderer, g_bg_texture, &g_bg_source_rect, &g_bg_destination_rect);
 	
@@ -376,13 +348,12 @@ void Render()
 	r.h = text_score_rect.h;
 	SDL_RenderCopy(g_renderer, text_score, 0, &r);
 
-	
+	*/
 	
 
 	//draw to screen
 	SDL_RenderPresent(g_renderer);
 
-	std::cout.flush();// std::cout 모두 출력되게 (버퍼에 있는것도)
 
 }
 
@@ -518,4 +489,3 @@ void ClearGame()
 	TTF_CloseFont(game_font_);
 	SDL_DestroyTexture(text_kr);
 }
-*/
